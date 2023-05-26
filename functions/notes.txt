@@ -1,0 +1,24 @@
+26/05: C Programming
+global variables are accessible to all functions
+local or auto variables are accessible only to the function in which they are declared. they are only created when the function is called and destroyed when the function returns. they are created on the stack.
+declaring a variable doesnt allocate memory for it. it just tells the compiler that the variable will be used in the program. memory is allocated when the variable is defined.
+defining a variable means declaring it and allocating memory for it.
+a variable can be declared many times but defined only once.
+syntax of structure in c:
+struct structure_name
+{
+    data_type member1;
+    data_type member2;
+    data_type member3;
+    ...
+};
+to access members of a structure, we use the dot operator and a structure variable.
+eg: structure_name.member1
+you can also define a structure variable while declaring the structure.
+Eg: struct structure_name
+    {
+        data_type member1;
+        data_type member2;
+        data_type member3;
+        ...
+    } structure_variable;
