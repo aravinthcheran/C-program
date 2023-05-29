@@ -11,7 +11,7 @@ struct structure_name
     data_type member2;
     data_type member3;
     ...
-};
+}; where structure_name is the data_type and member1, member2, member3 are the members of the structure.
 to access members of a structure, we use the dot operator and a structure variable.
 eg: structure_name.member1
 you can also define a structure variable while declaring the structure.
@@ -22,3 +22,42 @@ Eg: struct structure_name
         data_type member3;
         ...
     } structure_variable;
+
+
+29/05: C Programming
+To get an input including spaces, use fgets(string name, int size, stdin);
+we can also declare a structure by,
+    struct employee
+    {
+        char name[50];
+        int id;
+    }e1={"alex", 1001}, e2={"john", 1002};
+to store multiple data in a structure use multiple structure variables by declaring it as an array.
+Eg: struct employee
+    {
+        char name[50];
+        int id;
+    }e1[5];
+you can also declare the values of data members by,
+    struct employee
+    {
+        char name[50];
+        int id;
+    }e1;
+    int main()
+    {
+        struct employee e={.name``="alex", .id=1001};
+    }
+you can also store data as,
+    struct employee
+    {
+        char name[50];
+        int id;
+    };
+    int main()
+    {
+        struct employee e[3];
+        e[0]=(struct employee){"alex", 1001};
+        e[1]=(struct employee){"john", 1002};
+        e[2]=(struct employee){"jane", 1003};
+    }

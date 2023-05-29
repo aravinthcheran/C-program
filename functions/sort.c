@@ -3,11 +3,10 @@ int n;
 int main()
 {
     int x[4]={1,2,3,4};
-    n=sizeof(x)/sizeof(x[0]);
-    sort(x);   
+    int n=sizeof(x)/sizeof(x[0]);
+    sort(x,n);   
 }
-printf("%d\n",int n);
-void sort(int x[])
+void sort(int x[],int n)
 {
     for(int i=0;i<n;i++)
     {

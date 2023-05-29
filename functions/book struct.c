@@ -5,28 +5,16 @@ struct book
     int copies;
     long int number;
     float price;
-};
+}b[3]={{"The Alchemist",100,1234567890,250.00},{"The Monk who sold his Ferrari",200,1234567891,350.00},{"The Power of Subconscious Mind",300,1234567892,450.00}};
 int main()
-{
-    struct book b;
-    int n;
-    printf("Enter the total number of books: ");
-    scanf("%d",&n);
-    for(int i=0;i<n;i++)
+{   char str1[]="THE HOOLINGER";
+    strcpy(b[0].name,str1);
+    for(int i=0;i<3;i++)
     {
-        printf("Enter the name of the book: ");
-        scanf("%s",b.name);
-        printf("Enter the number of copies: ");
-        scanf("%d",&b.copies);
-        printf("Enter the price of the book: ");
-        scanf("%f",&b.price);
-        printf("Enter the book ID: ");
-        scanf("%lu",&b.number);
-        printf("\n");
-        printf("The name of the book is %s\n",b.name);
-        printf("The number of copies is %d\n",b.copies);
-        printf("The price of the book is %f\n",b.price);
-        printf("The book ID is %lu\n",b.number);
-        printf("\n");
+        printf("The name of the book is: %s\n",b[i].name);
+        printf("The number of copies of the book is: %d\n",b[i].copies);
+        printf("The number of the book is: %ld\n",b[i].number);
+        printf("The price of the book is: %f\n",b[i].price);
     }
+    
 }

@@ -7,7 +7,7 @@ int main()
     printf("%d\n",i);
     test1();
 }
-int i=1; //definition(memory allocation)
+int i; //definition(memory allocation)
 void test1()
 {
     i++;
