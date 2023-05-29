@@ -46,9 +46,9 @@ void sort(struct bio d[])
     }
     for(int i=0;i<3;i++)
     {
-        for(int j=0;j<3;j++)
+        for(int j=i+1;j<3;j++)
         {
-            if(d[i].avg>d[j].avg)
+            if(d[i].avg<d[j].avg)
             {
                 struct bio temp=d[i];
                 d[i]=d[j];
