@@ -61,3 +61,6 @@ you can also store data as,
         e[1]=(struct employee){"john", 1002};
         e[2]=(struct employee){"jane", 1003};
     }
+
+30/05: C Programming
+pointers
