@@ -63,4 +63,23 @@ you can also store data as,
     }
 
 30/05: C Programming
-pointers
+pointers are defined usimg the * operator.
+when pointers are accessed without a * operator they return the address of the variable they are pointing to.
+when pointers are accessed with a * operator they return the value of the variable they are pointing to.
+A value is assigned to a pointer using the & operator.Eg: int x=1,*p=&x;
+to print address of a float variable using pointer, use %p.
+when a pointer is assigned to an array, it points to the first element of the array.
+when you declare a pointer to any variable or array,then,
+    if : int x=1,*p=&x;
+        then, p=&x; and *p=x;
+Assume the address of n1 is 100 and n2 is 5.The value of pointers *p1 and *p2 are 4632 and 5142 respectively. Find the values of n1 and n2?
+values of n1 and n2 are 4632 and 5142 respectively.the values of p1 and p2 are 100 and 5 respectively.
+To  access all the elements of an array using a pointer, use a for loop.
+eg: int i[]={1,2,3};
+    int *p=i;
+    for(int j=0;j<3;j++)
+    {
+        printf("%d",*p);
+        p++;
+    }
+assinging a pointer variable with * is called dereferencing.
