@@ -83,3 +83,12 @@ eg: int i[]={1,2,3};
         p++;
     }
 assinging a pointer variable with * is called dereferencing.
+31/05: C Programming
+static variables are declared using the static keyword. they are initialized to 0 by default.
+the use of static variables is to retain the value of a variable even after the function returns.
+static and global variables are stored in the data segment region whereas local variables are stored in the stack region.
+when static variables are initialized they are stored in initialized data segment and when they are not initialized they are stored in uninitialized data segment.
+lifetime of a static variable is the entire program whereas the scope is the block in which it is declared.
+Register variables when they do not find space in the register, they are stored in the memory(RAM).They act like a local variables.
+The default value of a register variable is garbage value.
+When you pass a pointer to the function, pass it without the * operator.
