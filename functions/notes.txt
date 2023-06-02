@@ -92,3 +92,8 @@ lifetime of a static variable is the entire program whereas the scope is the blo
 Register variables when they do not find space in the register, they are stored in the memory(RAM).They act like a local variables.
 The default value of a register variable is garbage value.
 When you pass a pointer to the function, pass it without the * operator.
+
+2/06: C Programming
+to declare a character pointer use char *p;
+if you declare a value as a pointer to a function and if its value has been modified in the function, then the value of the variable is also modified.
+but if you pass it as a normal array, then the value of the variable is not modified.
