@@ -124,3 +124,13 @@ the data type of the address returned by malloc is void. It expects a typecast.
 syntax: ptr=(cast-type*)malloc(byte-size)
 Eg: int *p;
     p=(int *)malloc(sizeof(int)*n);
+calloc() function is used to allocate memory dynamically. A VOID POINTER.
+it takes 2 inputs, the number of elements and the size of each element.
+it initializes the allocated memory to 0 wheras its garbage value in malloc.
+syntax is p=(cast-type*)calloc(n,element-size)
+realloc() function is used to reallocate memory dynamically.
+it takes 2 inputs, the pointer to the previously allocated memory and the new size.
+syntax is p=realloc(ptr,new-size)
+eg: int *p;
+    p=(int *)malloc(sizeof(int)*n);
+    p=realloc(p,sizeof(int)*m);
