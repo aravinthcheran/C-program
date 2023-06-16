@@ -84,16 +84,43 @@ eg: int i[]={1,2,3};
     }
 assinging a pointer variable with * is called dereferencing.
 31/05: C Programming
+Extern variable:
+global variables are defined by the keyword extern.
+the scope of a extern variable is the entire program.
+the lifetime of a extern variable is the entire program.
+the default value of a extern variable is 0.
+the use of extern variable is to access a global variable in a function.
+static variable:
 static variables are declared using the static keyword. they are initialized to 0 by default.
 the use of static variables is to retain the value of a variable even after the function returns.
 static and global variables are stored in the data segment region whereas local variables are stored in the stack region.
 when static variables are initialized they are stored in initialized data segment and when they are not initialized they are stored in uninitialized data segment.
 lifetime of a static variable is the entire program whereas the scope is the block in which it is declared.
+Register variable:
+register variables are declared using the register keyword.
+they are stored in the register of the cpu.
 Register variables when they do not find space in the register, they are stored in the memory(RAM).They act like a local variables.
 The default value of a register variable is garbage value.
+use of register variable is to store temporary data.
+auto variable:
+auto variables are declared using the auto keyword.
+they are stored in the stack region.
+the default value of an auto variable is garbage value.
+the scope of an auto variable is the block in which it is declared.
+the lifetime of an auto variable is the block in which it is declared.
+the use of auto variables is to store temporary data.
 When you pass a pointer to the function, pass it without the * operator.
 
 2/06: C Programming
 to declare a character pointer use char *p;
 if you declare a value as a pointer to a function and if its value has been modified in the function, then the value of the variable is also modified.
 but if you pass it as a normal array, then the value of the variable is not modified.
+
+c programming:16/06
+dynamic memory allocation:
+malloc() function is used to allocate memory dynamically.
+malloc goes to heap memory and allocates memory.after allocation it will return the address of the first byte of the allocated memory.
+the data type of the address returned by malloc is void. It expects a typecast.
+syntax: ptr=(cast-type*)malloc(byte-size)
+Eg: int *p;
+    p=(int *)malloc(sizeof(int)*n);
