@@ -134,3 +134,8 @@ syntax is p=realloc(ptr,new-size)
 eg: int *p;
     p=(int *)malloc(sizeof(int)*n);
     p=realloc(p,sizeof(int)*m);
+2d pointer:
+we can declare a pointer to 2d array using (*p)[];
+to print values of an 2d array using pointers, use *(*(p+i)+j)
+to print values of an 2d array using pointers, use *(p[i]+j)
+in a pointer array 3[p]=*(3+p)=*(p+3)=p[3]
