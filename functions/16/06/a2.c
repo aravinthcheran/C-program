@@ -1,4 +1,4 @@
-//write the program that gets the sentence from the user and stores it dynamically an d finds teh length of the sentence using strlen() function
+//write the program that gets the sentence from the user and stores it dynamically an d finds the length of the sentence using strlen() function
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
