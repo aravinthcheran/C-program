@@ -139,3 +139,41 @@ we can declare a pointer to 2d array using (*p)[];
 to print values of an 2d array using pointers, use *(*(p+i)+j)
 to print values of an 2d array using pointers, use *(p[i]+j)
 in a pointer array 3[p]=*(3+p)=*(p+3)=p[3]
+28/06: C Programming
+to define a structure array using pointers, use struct employee *p[3];
+Nested structures:
+structures can be nested inside another structure.
+Eg: struct address
+    {
+        int doorno;
+        char street[50];
+        char city[50];
+        char statename[50];
+        int pincode;
+    }
+    struct student
+    {
+        char name[50];
+        int rollno;
+        struct address a;//nested structure
+    }
+    int main()
+    {
+        struct student s;
+        s.a.doorno=1;
+        //to access the members of the nested structure, use the dot operator, with the structure variable and the structure member.
+    }
+    to access a structure data using pointers, use the arrow operator.
+    Eg: struct student
+        {
+            char name[50];
+            int rollno;
+            struct address a;//nested structure
+        }
+        int main()
+        {
+            struct student *p;
+            p->a.doorno=1;
+            //to access the members of the nested structure, use the arrow operator, with the structure pointer and the structure member.
+        }
+    
