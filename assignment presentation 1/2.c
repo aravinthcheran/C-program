@@ -6,32 +6,25 @@
 
 char* getUniqueCharacters(char* str)
 {
-    int len = strlen(str);
-    char* result = malloc(sizeof(char) * (len + 1));
-    int index = 0;
-
-    for (int i = 0; i < len; i++)
+    int len=strlen(str);
+    char *p=malloc(sizeof(char)*len);
+    int j=0;
+    for(int i=0;i<len;i++)
     {
-        int j;
-        for (j = 0; j < index; j++)
+        if(str[i]!=str[i+1])
         {
-            if (str[i] == result[j])
-                break; 
-        }
-        if (j == index)
-        {
-            result[index++] = str[i]; 
+            p[j]=str[i];
+            j++;
         }
     }
-    result[index] = '\0';
-    return result;
+    return p;
 }
 
 int main()
 {
     char str[max];
     printf("Enter the string: ");
-    scanf("%s",str);
+    fgets(str,max,stdin);
     char *p=malloc(sizeof(char)*strlen(str));
     for(int i=0;i<strlen(str);i++)
     {

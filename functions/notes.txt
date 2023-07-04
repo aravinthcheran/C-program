@@ -176,4 +176,29 @@ Eg: struct address
             p->a.doorno=1;
             //to access the members of the nested structure, use the arrow operator, with the structure pointer and the structure member.
         }
-    
+4/07: C Programming
+files:
+to open a file, use fopen("filename","mode");
+modes:
+r: read
+w: write
+a: append
+r+: read and write
+w+: read and write
+seek is used to move the file pointer to a particular position.
+    seek_set: start of the file-0
+    seek_cur: current position of the file-1
+    seek_end: end of the file-2
+to close a file, use fclose(file pointer);
+to read a file, use fgetc(file pointer);
+to write a file, use fputc(character,file pointer);
+syntax of seek is fseek(file pointer,offset,position);
+ftell(file pointer) is used to find the current position of the file pointer.
+feof(file pointer) is used to find the end of the file.
+it will take the file pointer as input and returns 0 if the file pointer is not at the end of the file and returns 1 if the file pointer is at the end of the file.
+to ope a file using path, use fopen("path","mode");
+it is in read mode by default.
+
+
+fwrite is used to write data into a file.
+syntax is fwrite(address of the variable,size of the variable,number of variables,file pointer);
