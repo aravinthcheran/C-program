@@ -13,15 +13,15 @@ char* remove1(char *str,int len)
 {
     char *str1=malloc(sizeof(char)*len);
     int j=0;
-    for(int i=0;i<len;i++)
-    {
-       if (str[i] != 'a' && str[i] != 'e' && str[i] != 'i' && str[i] != 'o' && str[i] != 'u' &&
-            str[i] != 'A' && str[i] != 'E' && str[i] != 'I' && str[i] != 'O' && str[i] != 'U')
-        {
-            str1[j]=str[i];
+    for (int i = 0; i < len; i++) {
+        char ch = str[i];
+        if (ch != 'a' && ch != 'e' && ch != 'i' && ch != 'o' && ch != 'u' &&
+            ch != 'A' && ch != 'E' && ch != 'I' && ch != 'O' && ch != 'U') {
+            str[j] = ch;
             j++;
         }
     }
-    str1[j]='\0';
-    return str1;
+
+    str[j] = '\0';
+    return str;
 }
