@@ -2,7 +2,7 @@
 clockwise in-place.*/
 #include<stdio.h>
 #include<stdlib.h>
-int rotate(int r,int c,int *arr);
+int rotate(int r,int c,int (*arr)[c]);
 int main()
 {
     printf("Enter the number of rows: ");
@@ -22,7 +22,7 @@ int main()
     }
     rotate(r,c,arr);
 }
-int rotate(int r,int c, int *arr)
+int rotate(int r,int c, int (*arr)[c])
 {
     int arr1[c][r];
     for(int i=0;i<r;i++)
@@ -54,5 +54,4 @@ int rotate(int r,int c, int *arr)
         }
         printf("\n");
     }
-    free(arr);
 }
