@@ -32,11 +32,12 @@ int main()
             }
         }
     }
-    fp=fopen("text.txt","w");
+    fp=fopen("test.txt","w");
     for(int i=0;i<n;i++)
     {
         fputs(str[i],fp);
     }
     fclose(fp);
+    printf("File sorted successfully");
     return 0;
 }
