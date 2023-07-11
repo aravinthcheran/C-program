@@ -202,3 +202,29 @@ it is in read mode by default.
 
 fwrite is used to write data into a file.
 syntax is fwrite(address of the variable,size of the variable,number of variables,file pointer);
+
+c programming: 5/07
+fprintf() is used to write data into a file.syntax is fprintf(file pointer,"format specifier",variables);
+fscanf() is used to read data from a file.
+syntax is fscanf(file pointer,"format specifier",&variables);
+
+enum:
+enum can be used instead of structure to store multiple data.
+syntax is enum enum_name{value1,value2,value3,...};
+the value inside the paranthesis are called enumerators which are of integer type.
+to increase readability of the code, we can assign values to the enumerators.
+syntax is :
+        enum enum_name
+        {
+            value1=1,
+            value2=2,
+            value3=3,
+            ...
+        };
+scanf("%d",&variable) is used to read an integer value from the user. then using switch case, we can print the corresponding value.
+
+union:
+union is a user defined data type.
+it is similar to structure.
+the difference between structure and union is that, in structure, the memory is allocated for all the members of the structure whereas in union, the memory is allocated for the largest member of the union.
+to run program from terminal, use gcc filename.c -o filename

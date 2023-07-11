@@ -1,60 +1,72 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
 
-void rotate(int r, int c, int (*arr)[c]);
-
-int main()
-{
-    printf("Enter the number of rows: ");
-    int r;
-    scanf("%d", &r);
-    printf("Enter the number of columns: ");
-    int c;
-    scanf("%d", &c);
-    int (*arr)[c] = malloc(sizeof(int) * r * c);
-    printf("Enter the elements of the array: \n");
-    for(int i = 0; i < r; i++)
-    {
-        for(int j = 0; j < c; j++)
-        {
-            scanf("%d", &arr[i][j]);
+void transpose(int mat[][100], int rows, int cols) {
+    int temp[100][100];
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            temp[i][j] = mat[i][j];
         }
     }
-    rotate(r, c, arr);
-    printf("The rotated array is: \n");
-    for(int i = 0; i < c; i++)
-    {
-        for(int j = 0; j < r; j++)
-        {
-            printf("%d ", arr[j][i]);
+    for (int i = 0; i < cols; i++) {
+        for (int j = 0; j < rows; j++) {
+            mat[j][i] = temp[i][j];
         }
-        printf("\n");
     }
 }
 
-void rotate(int r, int c, int (*arr)[c])
-{
-    for(int i = 0; i < r; i++)
-    {
-        for(int j = i + 1; j < c; j++)
-        {
-            int temp = arr[i][j];
-            arr[i][j] = arr[j][i];
-            arr[j][i] = temp;
-        }
-    }
-    for(int i = 0; i < r; i++)
-    {
-        int f = 0;
-        int l = c - 1;
+void reverseRows(int mat[][100], int rows, int cols) {
+    for (int i = 0; i < rows; i++) {
+        int start = 0;
+        int end = cols - 1;
 
-        while(f < l)
-        {
-            int temp = arr[i][f];
-            arr[i][f] = arr[i][l];
-            arr[i][l] = temp;
-            f++;
-            l--;
+        while (start < end) {
+            int temp = mat[i][start];
+            mat[i][start] = mat[i][end];
+            mat[i][end] = temp;
+
+            start++;
+            end--;
         }
     }
+}
+
+void rotateMatrix(int mat[][100], int rows, int cols) {
+    transpose(mat, rows, cols);
+    //reverseRows(mat, rows, cols);
+}
+
+int main() {
+    int rows, cols;
+    printf("Enter the number of rows: ");
+    scanf("%d", &rows);
+    printf("Enter the number of columns: ");
+    scanf("%d", &cols);
+
+    int mat[100][100];
+    printf("Enter the elements of the matrix:\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            scanf("%d", &mat[i][j]);
+        }
+    }
+
+    printf("Original Matrix:\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            printf("%d ", mat[i][j]);
+        }
+        printf("\n");
+    }
+
+    rotateMatrix(mat, rows, cols);
+
+    printf("Rotated Matrix:\n");
+    for (int i = 0; i < cols; i++) {
+        for (int j = 0; j < rows; j++) {
+            printf("%d ", mat[j][i]);
+        }
+        printf("\n");
+    }
+
+    return 0;
 }
