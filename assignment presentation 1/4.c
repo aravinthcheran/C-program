@@ -17,7 +17,7 @@ int palindrome(char *str, int start, int end)
 }
 char* longestpalindrome(char *str)
 {
-    static char result[MAX_LENGTH];
+    char result[MAX_LENGTH];
     int len = strlen(str);
     int maxlength = 0;
     int start = 0;
@@ -36,7 +36,7 @@ char* longestpalindrome(char *str)
             }
         }
     }
-    strncpy(result, str + start, maxlength);
+    strncpy(result, str + start, maxlength);        //syntax for strncpy is strncpy(destination, source, length)
     result[maxlength] = '\0';
     return result;
 }

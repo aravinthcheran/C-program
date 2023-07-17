@@ -1,53 +1,34 @@
-#include<stdio.h>
-int *transpose(int r,int c,int (*arr)[c]);
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+char *vowel(char *ptr,int len);
+
 int main()
 {
- printf("enter the no.of rows:");
- int r;
- scanf("%d",&r);
- printf("enter the no.of columns:");
- int c;
- scanf("%d",&c);
- int (*arr)[c]=malloc(sizeof(int)*r*c);
-for(int i=0;i<r;i++)
- {
- for(int j=0;j<c;j++)
-  {
-   scanf("%d",&arr[i][j]);
-   }
- }
-   transpose(r,c,arr);
-   printf("%d",swap(r,c,arr));
+    int n;
+    scanf("%d",&n);
+    printf("enter a string:");
+    char *str=malloc(sizeof(char)*n);
+    scanf("%s",str);
+    char *str1=vowel(str,n);
+    printf("the string without vowels are:%s",str1);
 }
 
-int *transpose(int r,int c,int (*arr)[c])
+char *vowel(char *ptr,int n)
 {
-  int (*arr1)[r]=(int*)malloc(sizeof(int)*r*c);
-  {
-  for(int i=0;i<r;i++)
-  {
-   for(int j=0;j<c;j++)
-   {
-     arr1[j][i]=arr[i][j];
-   }
-   return arr1;
-  }
-  }
-}
-
-int *swap(int r,int c,int (*arr1)[c])
-{
-  int f=0,e=c-1;
-  for(int i=0;i<r;i++)
-  {
-  while(f<e)
-  { 
-    int c=arr1[i][f];
-    arr1[i][f]=arr1[i][e];
-    arr1[i][e]=c;
-    f++;
-    e--;
-   }
-   }
-   return arr1;
+    for(int i=0;i<n;i++)
+    {
+        if((ptr[i]=='A')||(ptr[i]=='a')||(ptr[i]=='E')||(ptr[i]=='e')||(ptr[i]=='I')||(ptr[i]=='i')||(ptr[i]=='O')||(ptr[i]=='o')||(ptr[i]=='U')||(ptr[i]=='u'))
+        {
+            for(int j=i;j<n-1;j++)
+            {
+                ptr[j]=ptr[j+1];
+            }
+            i--;
+            n--;
+        }
+    }
+    ptr[n]='\0';
+    return ptr;
 }

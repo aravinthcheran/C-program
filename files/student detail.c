@@ -14,7 +14,7 @@ int main()
     scanf("%d",&n);
     struct student s[n];
     FILE *fp;
-    /*fp=fopen("students.txt","w");
+    fp=fopen("students.txt","w");
     for(int i=0;i<n;i++)
     {
         printf("Enter name of student %d: ",i+1);
@@ -27,14 +27,18 @@ int main()
         {
             scanf("%d",&s[i].marks[j]);
         }
-        fprintf(fp,"%s %s ",s[i].name,s[i].roll);
+    }
+    for(int i=0;i<n;i++)
+    {
+        fprintf(fp,"%s",s[i].name);
+        fprintf(fp,"%s\n",s[i].roll);
         for(int j=0;j<6;j++)
         {
             fprintf(fp,"%d ",s[i].marks[j]);
         }
         fprintf(fp,"\n");
     }
-    fclose(fp);*/
+    fclose(fp);
     int avg[n][6];
     fp=fopen("students.txt","r");
     if(fp==NULL)

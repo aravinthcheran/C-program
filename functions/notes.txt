@@ -202,6 +202,8 @@ it is in read mode by default.
 
 fwrite is used to write data into a file.
 syntax is fwrite(address of the variable,size of the variable,number of variables,file pointer);
+fread is used to read data from a file.
+syntax is fread(address of the variable,size of the variable,number of variables,file pointer);
 
 c programming: 5/07
 fprintf() is used to write data into a file.syntax is fprintf(file pointer,"format specifier",variables);
@@ -228,3 +230,10 @@ union is a user defined data type.
 it is similar to structure.
 the difference between structure and union is that, in structure, the memory is allocated for all the members of the structure whereas in union, the memory is allocated for the largest member of the union.
 to run program from terminal, use gcc filename.c -o filename
+
+Command line arguments:
+command line arguments in c allow you to pass arguments to your c program when you run it from the command line
+these arguments are passed to the main() function.
+syntax is int main(int argc,char *argv[])
+argc is the number of arguments passed to the program.
+argv is an array of character pointers which points to the arguments passed to the program.
