@@ -126,7 +126,7 @@ Eg: int *p;
     p=(int *)malloc(sizeof(int)*n);
 calloc() function is used to allocate memory dynamically. A VOID POINTER.
 it takes 2 inputs, the number of elements and the size of each element.
-it initializes the allocated memory to 0 wheras its garbage value in malloc.
+it initializes the allocated memory to 0 whereas its garbage value in malloc.
 syntax is p=(cast-type*)calloc(n,element-size)
 realloc() function is used to reallocate memory dynamically.
 it takes 2 inputs, the pointer to the previously allocated memory and the new size.
@@ -176,6 +176,9 @@ Eg: struct address
             p->a.doorno=1;
             //to access the members of the nested structure, use the arrow operator, with the structure pointer and the structure member.
         }
+we use arrow symbol(->) to access the members of a structure using pointers.
+Eg: printf("The name of the student is:%s",p->name);
+    printf("The rollno of the student is:%d",p->rollno);
 4/07: C Programming
 files:
 to open a file, use fopen("filename","mode");
@@ -193,17 +196,21 @@ to close a file, use fclose(file pointer);
 to read a file, use fgetc(file pointer);
 to write a file, use fputc(character,file pointer);
 syntax of seek is fseek(file pointer,offset,position);
+Eg:fseek(fp,0,0)
 ftell(file pointer) is used to find the current position of the file pointer.
 feof(file pointer) is used to find the end of the file.
 it will take the file pointer as input and returns 0 if the file pointer is not at the end of the file and returns 1 if the file pointer is at the end of the file.
 to ope a file using path, use fopen("path","mode");
 it is in read mode by default.
-
-
+rewind() is used to move the file pointer to the start of the file.
+fgets() is used to read a string from a file.syntax fgets(string,size,file pointer);Eg: fgets(s,20,fp);fgets(destination,size,source)
+fputs() is used to write a string into a file.syntax fputs(string,file pointer);Eg: fputs(s,fp);fputs(source,destination)
 fwrite is used to write data into a file.
 syntax is fwrite(address of the variable,size of the variable,number of variables,file pointer);
+Eg: fwrite(&s,sizeof(s),1,fp);
 fread is used to read data from a file.
 syntax is fread(address of the variable,size of the variable,number of variables,file pointer);
+to read a number from a file, use fscanf(file pointer,"%d",&variable);
 
 c programming: 5/07
 fprintf() is used to write data into a file.syntax is fprintf(file pointer,"format specifier",variables);
@@ -237,3 +244,10 @@ these arguments are passed to the main() function.
 syntax is int main(int argc,char *argv[])
 argc is the number of arguments passed to the program.
 argv is an array of character pointers which points to the arguments passed to the program.
+
+Macro definition:
+macro definition is a way of substituting a line of code with another line of code.
+syntax is #define macro_name value
+Eg: #define MAX 100
+    #define AREA(l,b) (l*b)
+you can also define a function using macro.Eg: #define min(a,b)?a:b

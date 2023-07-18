@@ -1,7 +1,5 @@
-#include<stdio.h>
-int main()
-{
-    int a[5]={1.5};
-    int s=sizeof(a)/sizeof(a[1]);
-    printf("%d",s);
+int main(){
+union {int i1;int i2;} myVar={.i2 =100};
+printf("%d\n%d\n",myVar.i1,myVar.i2);
+return 0;
 }
